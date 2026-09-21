@@ -15,10 +15,10 @@ jobs:
       - name: Upload site over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          server: ${{ secrets.LOOPIA_FTP_SERVER }}
-          username: ${{ secrets.LOOPIA_FTP_USERNAME }}
+          server: ftpcluster.loopia.se
+          username: signalprofessor
           password: ${{ secrets.LOOPIA_FTP_PASSWORD }}
           protocol: ftps
           local-dir: ./dist/
-          server-dir: ${{ secrets.LOOPIA_FTP_PATH }}
+          server-dir: /
           dangerous-clean-slate: false
