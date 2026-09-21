@@ -1,5 +1,7 @@
-# Curiosity with an engine attached
+# Still looking for signal.
 
-Having achieved most of the conventional things I once aimed for, I am in the fortunate—and slightly dangerous—position of being free to see what turns up next.
+I don't know what the next project will be. That's rather the point.
 
-If your problem is difficult, useful, full of uncertainty and connected to good people, it may be worth a conversation.
+If you have a problem with societal value, good people, something genuinely difficult, and an idea exciting enough to steal time from golf, we already have four reasons to talk.
+
+Golf remains the fallback option.

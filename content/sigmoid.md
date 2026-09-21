@@ -1,6 +1,8 @@
-# Sigmoid — 1998
+# Sigmoid
 
-My first company was Sigmoid.
+I like new ideas.
+
+My first company, and still my playground for new projects.
 
 **SIG**nals, **MO**dels and **ID**entification.
 

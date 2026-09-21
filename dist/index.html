@@ -74,46 +74,11 @@
     .avatar { width: 28px; height: 28px; display: grid; place-items: center; margin-right: -8px; border: 2px solid var(--ink); border-radius: 50%; background: #1f4b3c; color: var(--mint); font: 500 .64rem var(--mono); }
     .scope { position: relative; aspect-ratio: 1/1.08; max-width: 500px; margin-left: auto; border: 1px solid var(--line); border-radius: 48% 48% 8px 8px; background: rgba(8, 25, 19, .85); box-shadow: 0 30px 80px rgba(0,0,0,.35); overflow: hidden; }
     .scope img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.88) contrast(1.04); }
-    .scope::before, .scope::after { content: ""; position: absolute; inset: 0; border-radius: 50%; }
-    .scope::before { background-image: linear-gradient(rgba(124,247,194,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(124,247,194,.08) 1px, transparent 1px); background-size: 10% 10%; mask-image: radial-gradient(circle, #000 62%, transparent 73%); }
-    .scope::after { inset: 8%; border: 1px dashed rgba(124,247,194,.18); }
-    .scope svg { position: absolute; inset: 15%; width: 70%; height: 70%; overflow: visible; }
-    .scope path { fill: none; stroke-linecap: round; }
-    .signal { stroke: var(--mint); stroke-width: 3; filter: drop-shadow(0 0 9px rgba(124,247,194,.6)); stroke-dasharray: 800; stroke-dashoffset: 800; animation: draw 2.3s .2s cubic-bezier(.4,0,.2,1) forwards; }
-    .ghost-signal { stroke: rgba(255,199,107,.38); stroke-width: 1.3; stroke-dasharray: 4 8; }
-    @keyframes draw { to { stroke-dashoffset: 0; } }
-    .scope-label { position: absolute; font: 500 .68rem var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
-    .scope-label.top { top: 13%; left: 50%; transform: translateX(-50%); }
-    .scope-label.bottom { bottom: 13%; left: 50%; transform: translateX(-50%); color: var(--mint); }
     .scope-stat { position: absolute; left: 8%; bottom: 21%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 7px; background: rgba(7,17,14,.82); font: .68rem var(--mono); color: var(--muted); backdrop-filter: blur(8px); }
     .scope-stat b { color: var(--amber); font-weight: 500; }
-    .marquee { border-block: 1px solid var(--line); overflow: hidden; background: #091511; }
-    .marquee-track { display: flex; width: max-content; animation: scroll 26s linear infinite; }
-    .marquee span { display: flex; align-items: center; gap: 28px; padding: 18px 28px; color: #81958a; font: .72rem var(--mono); text-transform: uppercase; letter-spacing: .12em; }
-    .marquee span::after { content: "∿"; color: var(--mint); font-size: 1.1rem; }
-    @keyframes scroll { to { transform: translateX(-50%); } }
     section { padding: 112px 0; }
-    .section-head { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: end; margin-bottom: 56px; }
     .kicker { margin: 0 0 16px; color: var(--mint); font: .73rem var(--mono); text-transform: uppercase; letter-spacing: .11em; }
     h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.7rem, 4vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: -.04em; }
-    .section-head > p { margin: 0; color: var(--muted); line-height: 1.75; max-width: 500px; justify-self: end; }
-    .lesson-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
-    .lesson { position: relative; min-height: 350px; padding: 34px; border-right: 1px solid var(--line); background: linear-gradient(145deg, rgba(17,36,30,.48), rgba(7,17,14,.05)); transition: background .25s; overflow: hidden; }
-    .lesson:last-child { border-right: 0; }
-    .lesson:hover { background: rgba(22,56,44,.5); }
-    .lesson-num { color: var(--muted); font: .72rem var(--mono); }
-    .mini-viz { height: 108px; margin: 42px 0 30px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
-    .mini-viz svg { width: 100%; height: 100%; }
-    .mini-viz path { fill: none; stroke: var(--mint); stroke-width: 2; }
-    .lesson h3 { margin: 0 0 12px; font-size: 1.28rem; letter-spacing: -.025em; }
-    .lesson p { margin: 0; color: var(--muted); line-height: 1.65; font-size: .9rem; }
-    .lesson a { position: absolute; inset: 0; font-size: 0; }
-    .story { background: #e9f0eb; color: #0a1712; }
-    .story-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; align-items: start; }
-    .quote-mark { color: #2e7a5e; font-family: var(--serif); font-size: 9rem; line-height: .55; opacity: .35; }
-    blockquote { margin: 0; font-family: var(--serif); font-size: clamp(2rem, 3vw, 3.25rem); line-height: 1.24; letter-spacing: -.035em; }
-    .quote-meta { display: flex; align-items: center; gap: 14px; margin-top: 32px; color: #526159; font-size: .86rem; }
-    .quote-meta strong { color: #0a1712; display: block; }
     .heart { background:#0a1713; }
     .heart-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:72px; align-items:center; }
     .heart-copy h2 { margin:14px 0 25px; }
@@ -122,15 +87,6 @@
     .ecg { margin:0; padding:14px; background:#f7faf8; border:1px solid var(--line); }
     .ecg img { display:block; width:100%; height:auto; }
     .ecg figcaption { color:#526159; font:.68rem var(--mono); padding:10px 4px 0; }
-    .learn { background: #0a1713; }
-    .path { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .path-card { min-height: 300px; padding: 38px; border: 1px solid var(--line); border-radius: 18px; background: var(--panel); display: flex; flex-direction: column; justify-content: space-between; }
-    .path-card:nth-child(2) { background: var(--mint); color: var(--ink); border-color: transparent; }
-    .tag { width: fit-content; padding: 7px 10px; border: 1px solid currentColor; border-radius: 99px; opacity: .7; font: .7rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
-    .path-card h3 { max-width: 390px; margin: 50px 0 12px; font: 400 2rem/1.1 var(--serif); }
-    .path-card p { margin: 0; max-width: 430px; color: var(--muted); line-height: 1.6; }
-    .path-card:nth-child(2) p { color: #25513f; }
-    .path-link { margin-top: 26px; font-weight: 800; font-size: .88rem; text-decoration: none; }
     .prose { max-width: 760px; }
     .prose p { color:var(--muted); font-size:1rem; line-height:1.76; margin:0 0 22px; }
     .prose strong { color:var(--text); }
@@ -146,26 +102,53 @@
     pre { margin:0; padding:25px; overflow:auto; border-top:1px solid var(--line); color:#d9eee3; font:500 .82rem/1.7 var(--mono); }
     .field-story { background:var(--panel); }
     .field-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-    .field-layout .scope { max-width:none; border-radius:2px; margin:0; aspect-ratio:1.12/1; }
     .equipment { display:block; margin:28px 0; padding-top:18px; border-top:1px solid var(--line); color:var(--mint); font:.76rem/1.8 var(--mono); }
-    .sigmoid { background:#e9f0eb; color:#0a1712; }
-    .sigmoid-grid { display:grid; grid-template-columns:.75fr 1.25fr; gap:90px; }
-    .sigmoid .prose p { color:#526159; }
-    .sigmoid .prose strong { color:#0a1712; }
     .data-sheet { background:#0a1713; }
     .sheet-head { display:flex; justify-content:space-between; gap:30px; align-items:end; margin-bottom:45px; }
-    .sheet-head p { color:var(--muted); max-width:520px; line-height:1.6; }
-    .stats { width:100%; border-collapse:collapse; font-family:var(--mono); font-size:.82rem; }
-    .stats th { padding:12px 0; border-bottom:2px solid var(--mint); text-align:left; color:var(--mint); font-weight:500; text-transform:uppercase; letter-spacing:.08em; }
-    .stats th:last-child,.stats td:last-child { text-align:right; }
-    .stats td { padding:11px 0; border-bottom:1px solid var(--line); color:#c6d3cc; }
-    .stats td:last-child { color:var(--text); }
-    .and-since { margin:80px 0 28px; font:400 clamp(2.2rem,4vw,4rem)/1 var(--serif); }
     .academic { background:#10231c; }
-    .fact-list { display:grid; grid-template-columns:repeat(5,1fr); border:1px solid var(--line); margin-top:45px; }
-    .fact { padding:25px; border-right:1px solid var(--line); color:var(--muted); line-height:1.6; font-size:.84rem; }
-    .fact:last-child { border:0; }
-    .fact a { color:var(--mint); text-decoration:none; }
+    .identity-line { padding:21px 0; border-block:1px solid var(--line); background:#0a1712; color:#c6d7ca; font:500 .78rem/1.6 var(--mono); letter-spacing:.025em; }
+    .identity-line span { color:var(--mint); margin:0 9px; }
+    .s4-item small { display:block; margin-top:5px; color:#9db8a8; font:500 .7rem/1.5 var(--mono); letter-spacing:0; }
+    .field-story .field-layout { align-items:start; }
+    .field-story h2 { max-width:400px; }
+    .companies { background:#e9f0eb; color:#0a1712; }
+    .companies .kicker { color:#286d4c; }
+    .companies-intro { display:grid; grid-template-columns:.75fr 1.25fr; gap:30px 90px; padding-bottom:72px; }
+    .companies-intro .kicker { grid-column:1/-1; margin:0; }
+    .companies-intro h2 { max-width:470px; }
+    .companies-intro .prose p { color:#43544a; }
+    .company-pattern,.company-aside { grid-column:2; margin:0; color:#526158; line-height:1.6; }
+    .company-pattern { font:500 .75rem/1.8 var(--mono); color:#276747; }
+    .timeline { border-top:1px solid #aebbb1; }
+    .timeline-item { display:grid; grid-template-columns:180px 1fr; gap:35px; border-bottom:1px solid #aebbb1; padding:55px 0 60px; }
+    .timeline-date { color:#2d7654; font:500 1.05rem var(--mono); padding-top:8px; }
+    .timeline-body { max-width:750px; }
+    .timeline-body h3 { margin:0 0 18px; font:400 clamp(2.3rem,4vw,4rem)/1 var(--serif); letter-spacing:-.04em; }
+    .timeline-body p { margin:0 0 15px; color:#43544a; font-size:1rem; line-height:1.72; }
+    .timeline-body p.personal { color:#0a1712; font:400 1.65rem/1.25 var(--serif); }
+    .timeline-body p.question { color:#0a1712; font-weight:700; }
+    .timeline-body p.company-punch { color:#286d4c; font-family:var(--serif); font-size:1.35rem; }
+    .timeline-body p.caveat { font-style:italic; font-size:.88rem; }
+    .timeline-body strong { color:#0a1712; }
+    .paper-link { display:block; margin-top:25px; color:#195a3d; text-decoration:none; font:700 .84rem var(--sans); }
+    .paper-link span { display:block; margin-top:6px; color:#576a5e; font:400 .75rem/1.5 var(--mono); }
+    .paper-link:hover,.academic-copy a:hover { text-decoration:underline; }
+    .stat-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }
+    .stat { min-height:150px; display:flex; flex-direction:column; justify-content:space-between; gap:18px; padding:23px 25px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .stat strong { color:var(--mint); font:400 clamp(1.8rem,3vw,2.8rem)/1 var(--serif); letter-spacing:-.03em; overflow-wrap:anywhere; }
+    .stat strong.long { font-size:clamp(1.25rem,2vw,1.9rem); line-height:1.2; }
+    .stat span { color:#a9bbb0; font:400 .79rem/1.5 var(--mono); }
+    .stats-preface { margin:0 0 35px; color:#a9bbb0; font:400 1.5rem/1.35 var(--serif); }
+    .heart { border-top:1px solid var(--line); }
+    .heart .heart-grid { grid-template-columns:.75fr 1.25fr; }
+    .heart .heart-copy h2 { max-width:400px; }
+    .ecg figcaption em { display:block; margin-top:7px; }
+    .academic-copy { max-width:780px; margin-top:30px; }
+    .academic-copy p { color:#c7d5cc; font-size:1.03rem; line-height:1.75; }
+    .academic-copy a { color:var(--mint); text-decoration:none; font-weight:700; }
+    .academic-copy > a { display:inline-block; margin-top:15px; }
+    .academic-copy span { display:block; margin-top:20px; font-size:.78rem; }
+    .fallback { position:relative; color:var(--muted); font:italic 1.04rem var(--serif); margin:22px 0 0; }
     .final { text-align: center; padding: 140px 0; position: relative; overflow: hidden; }
     .final::before { content: ""; position: absolute; width: 650px; height: 650px; left: 50%; top: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(124,247,194,.12), transparent 64%); pointer-events: none; }
     .final h2 { position: relative; max-width: 780px; margin: 0 auto 34px; font-size: clamp(3.2rem, 6vw, 6rem); }
@@ -181,14 +164,10 @@
       .eyebrow, .hero-actions, .trust { justify-content: center; }
       .lead { margin-inline: auto; }
       .scope { margin-inline: auto; width: min(88vw, 480px); }
-      .section-head, .story-wrap { grid-template-columns: 1fr; gap: 28px; }
-      .section-head > p { justify-self: start; }
-      .lesson-grid { grid-template-columns: 1fr; }
-      .lesson { border-right: 0; border-bottom: 1px solid var(--line); min-height: 320px; }
-      .lesson:last-child { border-bottom: 0; }
-      .path, .heart-grid, .s4-layout, .field-layout, .sigmoid-grid { grid-template-columns: 1fr; }
-      .fact-list { grid-template-columns:1fr; }
-      .fact { border-right:0; border-bottom:1px solid var(--line); }
+      .heart-grid, .s4-layout, .field-layout, .companies-intro { grid-template-columns: 1fr; }
+      .companies-intro .kicker,.company-pattern,.company-aside { grid-column:1; }
+      .heart .heart-grid { grid-template-columns:1fr; }
+      .stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
     }
     @media (max-width: 560px) {
       .shell { width: min(100% - 26px, 1180px); }
@@ -198,10 +177,14 @@
       h1 { font-size: clamp(3.25rem, 16vw, 4.5rem); }
       section { padding: 84px 0; }
       .hero { padding: 54px 0 72px; }
-      .lesson, .path-card { padding: 28px; }
       .s4-item { grid-template-columns:1fr; gap:8px; }
       .sheet-head { align-items:start; flex-direction:column; }
-      .stats { font-size:.7rem; }
+      .identity-line { font-size:.71rem; }
+      .identity-line span { margin:0 4px; }
+      .timeline-item { grid-template-columns:1fr; gap:13px; padding:42px 0 48px; }
+      .timeline-date { padding:0; }
+      .stat-grid { grid-template-columns:1fr; }
+      .stat { min-height:126px; }
       .footer-inner { padding: 28px 0; align-items: flex-start; flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -220,8 +203,8 @@
         SignalProfessor
       </a>
       <div class="nav-links">
-        <a href="#lessons">Signals</a>
-        <a href="#approach">Approach</a>
+        <a href="#approach">S4</a>
+        <a href="#companies">Companies</a>
         <a href="#professor">Professor</a>
         <a class="pill" href="#start">What's next? <span aria-hidden="true">↗</span></a>
       </div>
@@ -238,7 +221,7 @@
 Fredrik Gustafsson is a signal professor in the broadest sense: someone who looks for meaningful structure in noisy reality. He likes problems that matter, people he enjoys, challenges that are difficult as hell, and ideas exciting enough to steal time from golf.</p><p>He moves between mathematics and field reality with little respect for disciplinary borders, turning uncertain measurements into decisions, research into systems, and occasionally equations into companies.</p><p>Nature, competition, family, humour and a portable espresso machine belong to the same story.</p><p>Having achieved most of the conventional things he once aimed for, he is now in the fortunate and slightly dangerous position of being free to see what turns up next.</p></div>
           <div class="hero-actions">
             <a class="pill" href="#approach">Follow the signal <span aria-hidden="true">↓</span></a>
-            <a class="pill outline" href="#lessons">Stories &amp; field notes</a>
+            <a class="pill outline" href="#field">In the wild</a>
           </div>
           <div class="trust">
             <div class="avatar-stack" aria-hidden="true"><span class="avatar">∑</span><span class="avatar">ƒ</span><span class="avatar">Δ</span></div>
@@ -249,38 +232,7 @@ Fredrik Gustafsson is a signal professor in the broadest sense: someone who look
       </section>
     </div>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Sensor fusion</span><span>Wildlife</span><span>Autonomous systems</span><span>Risk</span><span>Entrepreneurship</span>
-        <span>Sensor fusion</span><span>Wildlife</span><span>Autonomous systems</span><span>Risk</span><span>Entrepreneurship</span>
-      </div>
-    </div>
-
-    <section id="lessons" class="shell">
-      <div class="lesson-grid">
-        <article class="lesson">
-          <span class="lesson-num">01 / NATURE + TECHNOLOGY</span>
-          <div class="mini-viz"><svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C15 8 30 8 45 50 S75 92 90 50 S120 8 135 50 S165 92 180 50 S210 8 225 50 S255 92 270 50 S290 8 300 50"/></svg></div>
-          <h3>Before there were wildlife sensors, there was a boy looking for birds.</h3>
-          <p>Decades later, wildlife returned through technology: sensing, communications and AI in service of conservation and the people doing the work.</p>
-          <a href="#start" aria-label="Learn to read a signal in time">Open lesson</a>
-        </article>
-        <article class="lesson">
-          <span class="lesson-num">02 / IDEAS + INDEPENDENCE</span>
-          <div class="mini-viz"><svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 65 L28 65 L28 26 L58 26 L58 65 L92 65 L92 80 L128 80 L128 42 L170 42 L170 65 L210 65 L210 18 L245 18 L245 65 L300 65"/></svg></div>
-          <h3>Equations into companies</h3>
-          <p>A company is not a departure from research. It is one route by which an idea learns to move without its originator.</p>
-          <a href="#start" aria-label="Learn to think in systems">Open lesson</a>
-        </article>
-        <article class="lesson">
-          <span class="lesson-num">03 / HONEST FEEDBACK</span>
-          <div class="mini-viz"><svg viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path d="M18 90V65 M48 90V42 M78 90V72 M108 90V13 M138 90V58 M168 90V30 M198 90V76 M228 90V52 M258 90V80 M288 90V68"/></svg></div>
-          <h3>A clock, scorecard or chessboard does not care about reputation.</h3>
-          <p>Difficult tasks with honest feedback are hard to persuade with rhetoric.</p>
-          <a href="#start" aria-label="Learn to see frequency clearly">Open lesson</a>
-        </article>
-      </div>
-    </section>
+    <div class="identity-line"><div class="shell">Professor <span>·</span> Researcher <span>·</span> Entrepreneur <span>·</span> Occasionally found in trees</div></div>
 
     <section id="approach" class="s4-story">
       <div class="shell s4-layout">
@@ -292,10 +244,10 @@ I see more potentially interesting research problems than I could pursue in seve
         </div>
         <div>
           <div class="s4-list">
-            <div class="s4-item"><strong>Samhällsnytta</strong><p>Does it matter? Something useful should happen if we succeed. There should be a reason beyond producing another paper.</p></div>
-            <div class="s4-item"><strong>Socialt</strong><p>Do I want to do it with these people? Research consumes too much of life to spend it with people you don't enjoy.</p></div>
-            <div class="s4-item"><strong>Svårt som fan</strong><p>Is it genuinely difficult? If somebody else can easily solve it, they should. I can play golf instead.</p></div>
-            <div class="s4-item"><strong>Spännande</strong><p>Do I actually want to know the answer? This one has to make me curious enough to act.</p></div>
+            <div class="s4-item"><strong>Samhällsnytta <small>Societal benefit</small></strong><p>Does it matter? Something useful should happen if we succeed. There should be a reason beyond producing another paper.</p></div>
+            <div class="s4-item"><strong>Socialt <small>People</small></strong><p>Do I want to do it with these people? Research consumes too much of life to spend it with people you don't enjoy.</p></div>
+            <div class="s4-item"><strong>Svårt som fan <small>Difficult as hell</small></strong><p>Is it genuinely difficult? If somebody else can easily solve it, they should. I can play golf instead.</p></div>
+            <div class="s4-item"><strong>Spännande <small>Exciting</small></strong><p>Do I actually want to know the answer? This one has to make me curious enough to act.</p></div>
           </div>
           <p style="margin:25px 0;color:var(--text);font-family:var(--serif);font-size:1.45rem">The world. The people. The problem. Me.</p>
           <details class="code"><summary>&gt;_ implementation details</summary><pre><code>if ~samhallsnytta
@@ -313,12 +265,13 @@ end</code></pre></details>
       </div>
     </section>
 
-    <section class="field-story">
+    <section id="field" class="field-story">
       <div class="shell field-layout">
-        <figure class="scope"><img src="signalprofessor_acacia.png" alt="Fredrik Gustafsson with a BLE scanner installed in an acacia tree near Mount Kenya"></figure>
         <div>
-          <p class="kicker">Ol Pejeta · Mount Kenya</p>
+          <p class="kicker">Ngulia · Tsavo</p>
           <h2>Occasionally found in trees.</h2>
+        </div>
+        <div>
           <div class="prose">
             <p>
 Project Ngulia brought smartphones, sensors, cameras, radar and drones into ranger operations at a Kenyan rhino sanctuary. The objective was never a better gadget. It was a better decision available to the people protecting wildlife.</p>
@@ -329,71 +282,98 @@ Project Ngulia brought smartphones, sensors, cameras, radar and drones into rang
       </div>
     </section>
 
-    <section class="sigmoid">
-      <div class="shell sigmoid-grid">
-        <div><p class="kicker" style="color:#276747">Occasionally, the equations escape the university</p><h2>Sigmoid — 1998</h2></div>
-        <div class="prose">
-          <p>
-My first company was Sigmoid.</p><p><strong>SIG</strong>nals, <strong>MO</strong>dels and <strong>ID</strong>entification.</p><p>It also refers to the sigmoid function in neural networks.</p><p>And if someone asks rudely enough, I explain that <em>sigmoid</em> is Latin for <strong>asshole</strong>.</p><p><em>This explanation may not survive consultation with an actual Latin scholar.</em></p>
+    <section id="companies" class="companies">
+      <div class="shell">
+        <div class="companies-intro">
+          <p class="kicker">Research, then reality</p>
+          <h2>Occasionally, the equations escape the university</h2>
+          <div class="prose"><p>
+Looking back, the companies are not quite as random as they seem.</p><p>I like cars. I like rock'n'roll. I don't like spending more time in shopping malls than necessary. I like animals and nature. And I like ideas that fly.</p><p>More importantly, they all started with research problems interesting enough to survive S4.</p><p>Then occasionally someone founded a company.</p></div>
+          <p class="company-pattern">personal attraction → research question → company → concrete consequence → equations</p>
+          <p class="company-aside">A company is not a departure from research. It is one route by which an idea learns to move without its originator.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">1998</div>
+            <div class="timeline-body"><h3>Sigmoid</h3><p class="personal">
+I like new ideas.</p><p>My first company, and still my playground for new projects.</p><p><strong>SIG</strong>nals, <strong>MO</strong>dels and <strong>ID</strong>entification.</p><p>It also refers to the sigmoid function in neural networks.</p><p>And if someone asks rudely enough, I explain that <em>sigmoid</em> is Latin for <strong>asshole</strong>.</p><p class="caveat"><em>This explanation may not survive consultation with an actual Latin scholar.</em></p></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2001</div>
+            <div class="timeline-body"><h3>NIRA Dynamics</h3><p class="personal">
+I like cars.</p><p class="question">What can a car learn from sensors it already has?</p><p>Research on vehicle signal processing, estimation and sensor fusion helped turn that question into NIRA Dynamics.</p><p>One result was indirect tyre-pressure monitoring: infer something useful without adding another physical pressure sensor. The same philosophy later expanded from understanding the car to understanding the road.</p><a class="paper-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0005109897000034">Show me the equations → <span>F. Gustafsson, “Slip-based tire-road friction estimation,” Automatica, 1997.</span></a></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2003</div>
+            <div class="timeline-body"><h3>Softube</h3><p class="personal">
+I like rock'n'roll.</p><p class="question">Then the equations found a guitar amplifier.</p><p>Research on nonlinear system modelling and system identification met people who cared deeply about what amplifiers actually sounded like. Softube grew from that collision of engineering and music.</p><p>Today the brand is used by countless professional producers, GRAMMY-winning engineers and artists worldwide.</p><p class="company-punch">Same equations. More distortion.</p><a class="paper-link" href="https://doi.org/10.1109/9.566661">Show me the equations → <span>B. Ninness and F. Gustafsson, “A unifying construction of orthonormal bases for system identification.”</span></a></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2010</div>
+            <div class="timeline-body"><h3>Senion</h3><p class="personal">
+I don't like spending more time in shopping malls than necessary.</p><p class="question">GPS works beautifully until you walk indoors.</p><p>Senion grew from research on what radio measurements, wireless networks, motion sensors and sensor fusion can tell us about the position of a mobile device when satellites are no longer useful.</p><p class="question">If the phone can hear and feel its environment, can it figure out where it is?</p><p class="company-punch">It could.</p><a class="paper-link" href="https://people.isy.liu.se/rt/fredrik/reports/05spmag.pdf">Show me the equations → <span>F. Gustafsson and F. Gunnarsson, “Mobile positioning using wireless networks.”</span></a></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2021</div>
+            <div class="timeline-body"><h3>Qulinda</h3><p class="personal">
+I like animals and nature.</p><p class="question">Eventually, the signals grew legs.</p><p>Qulinda brings positioning, sensors, communications and AI to animals and nature—from livestock in Sweden to wildlife conservation in Africa.</p><p class="question">What is happening, where is it happening, and does someone need to know?</p><a class="paper-link" href="https://qulinda.com/om-oss/">Show me the field notes → <span>How the work started in Kenya and continues in Sweden and Africa.</span></a></div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-body"><h3>EastWing</h3><p class="personal">
+I like ideas that fly.</p><p class="question">Stay tuned...</p></div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="data-sheet">
       <div class="shell">
-        <div class="sheet-head"><div><p class="kicker">Vital statistics</p><h2>Some statistics are more useful than others.</h2></div><p>Useful and useless measurements, deliberately kept in the same table.</p></div>
-        <table class="stats">
-          <thead><tr><th>Measurement</th><th>Estimate</th></tr></thead>
-          <tbody>
-            <tr><td>Children</td><td>4</td></tr><tr><td>Marriages</td><td>2</td></tr><tr><td>Additional marriages planned</td><td>0</td></tr>
-            <tr><td>Marathons completed</td><td>8</td></tr><tr><td>Marathon PB</td><td>2:55</td></tr><tr><td>Half marathon PB</td><td>1:19</td></tr><tr><td>10 km PB</td><td>36:20</td></tr>
-            <tr><td>Best remembered chess season</td><td>21.5 / 24</td></tr><tr><td>Performance rating that season</td><td>≈2450</td></tr><tr><td>Golf round that makes me reasonably happy</td><td>≈84</td></tr>
-            <tr><td>Open-heart surgeries</td><td>1</td></tr><tr><td>Beats in ECG ensemble</td><td>26</td></tr>
-            <tr><td>Espresso machines</td><td>insufficiently centralized</td></tr><tr><td>Espresso machines taken to Africa</td><td>≥1</td></tr>
-            <tr><td>Licentiate defences attended from leopard cliffs</td><td>≥1</td></tr><tr><td>BLE scanners installed in acacia trees</td><td>≥1</td></tr>
-            <tr><td>Rhinos within working distance</td><td>varies</td></tr><tr><td>Papers</td><td>many</td></tr><tr><td>Papers that matter</td><td>harder to estimate</td></tr>
-          </tbody>
-        </table>
-        <h2 class="and-since">And since we're doing statistics...</h2>
+        <div class="sheet-head"><div><p class="kicker">Vital statistics</p><h2>Some statistics are more useful than others.</h2></div></div>
+        <p class="stats-preface">A clock, scorecard or chessboard does not care about reputation.</p>
+        <div class="stat-grid" aria-label="Vital statistics">
+          <div class="stat"><strong>4</strong><span>Children</span></div><div class="stat"><strong>2</strong><span>Marriages</span></div><div class="stat"><strong>0</strong><span>Additional marriages planned</span></div>
+          <div class="stat"><strong>8</strong><span>Marathons completed</span></div><div class="stat"><strong>2:55</strong><span>Marathon PB</span></div><div class="stat"><strong>36:20</strong><span>10 km PB</span></div>
+          <div class="stat"><strong>21.5 / 24</strong><span>Best remembered chess season</span></div><div class="stat"><strong>≈2450</strong><span>Performance rating that season</span></div><div class="stat"><strong>≈84</strong><span>Golf round that makes me reasonably happy</span></div>
+          <div class="stat"><strong>1</strong><span>Open-heart surgeries</span></div><div class="stat"><strong>26</strong><span>Beats in ECG ensemble</span></div><div class="stat"><strong class="long">insufficiently centralized</strong><span>Espresso machines</span></div>
+          <div class="stat"><strong>≥1</strong><span>Espresso machines taken to Africa</span></div><div class="stat"><strong>≥1</strong><span>Licentiate defences attended from leopard cliffs</span></div><div class="stat"><strong>≥1</strong><span>BLE scanners installed in acacia trees</span></div>
+          <div class="stat"><strong>varies</strong><span>Rhinos within working distance</span></div>
+        </div>
       </div>
     </section>
 
-    <section class="heart" style="padding-top:0">
+    <section class="heart">
       <div class="shell heart-grid">
         <div class="heart-copy">
-          <p class="kicker">Self-estimation from noisy measurements</p>
-          <h2>When the uncertain system is yourself</h2>
-          <p>
-After open-heart surgery entered the story, a raw Garmin ECG trace became detected R peaks, aligned beats, an ensemble mean and a 95% confidence interval over 26 beats.</p>
-          <p>Here is my heart. Here is its expected value. Here is the uncertainty.</p>
+          <h2>Here is my renovated heart.</h2>
         </div>
         <figure class="ecg">
           <img src="ecg-confidence.png" alt="Average ECG beat with a teal 95 percent confidence interval across 26 beats">
-          <figcaption>Self-estimation from noisy measurements · Average ECG beat · 95% confidence interval · N = 26 beats</figcaption>
+          <figcaption>Average ECG beat · 95% confidence interval · N = 26 beats <em>Self-estimation from noisy measurements.</em></figcaption>
         </figure>
       </div>
     </section>
 
     <section id="professor" class="academic">
       <div class="shell">
-        <p class="kicker">Professor gateway</p>
-        <h2>Less random statistics</h2>
-        <div class="fact-list">
-          <div class="fact">
-Professor of Sensor Informatics at Linköping University since 2005; previously appointed professor of Communication Systems in 1999. <a href="https://liu.se/medarbetare/fregu23">LiU profile ↗</a></div>
-          <div class="fact">Research spans statistical signal processing, adaptive filtering and change detection, with applications in communications, vehicles, aircraft and audio.</div>
-          <div class="fact">Author of books including <em>Adaptive Filtering and Change Detection</em>, <em>Signal Processing</em> and <em>Statistical Sensor Fusion</em>. <a href="https://www.control.isy.liu.se/en/books/">Books ↗</a></div>
-          <div class="fact">Awarded the Royal Swedish Academy of Sciences' Arnberg Prize in 2004 and elected to the Royal Swedish Academy of Engineering Sciences in 2007.</div>
-          <div class="fact">Initiated Wildlife Security with Johan Bergenäs; LiU's Project Ngulia work connected mobile reporting, sensors and drones with ranger operations. <a href="https://liu.se/forskning/smarta-savanner">Project ↗</a></div>
+        <h2>For the record.</h2>
+        <div class="academic-copy">
+          <p>
+Professor at Linköping University since 1999, currently Professor of Sensor Informatics. Research in statistical signal processing, sensor fusion, positioning and tracking, with an unfortunate tendency to spread into cars, aircraft, phones, audio, drones and wildlife.</p>
+          <p>Author of books including <em>Adaptive Filtering and Change Detection</em> and <em>Statistical Sensor Fusion</em>. IEEE Fellow, recipient of the Royal Swedish Academy of Sciences' Arnberg Prize, and member of the Royal Swedish Academy of Engineering Sciences.</p>
+          <a href="https://liu.se/en/employee/fregu23">Enter Professor mode →</a>
+          <span><a href="https://www.control.isy.liu.se/en/books/">Books</a> · <a href="https://staff.gitlab-pages.liu.se/publications/fregu23/">Papers</a></span>
         </div>
       </div>
     </section>
 
     <section id="start" class="final shell">
-      <h2>Curiosity with an engine attached</h2>
-      <p class="lead" style="margin:24px auto 32px">
-Having achieved most of the conventional things I once aimed for, I am in the fortunate—and slightly dangerous—position of being free to see what turns up next. If your problem is difficult, useful, full of uncertainty and connected to good people, it may be worth a conversation.</p>
+      <h2>Still looking for signal.</h2>
+      <p class="lead" style="margin:24px auto 20px">
+I don't know what the next project will be. That's rather the point.</p>
+      <p class="lead" style="margin:0 auto 32px">If you have a problem with societal value, good people, something genuinely difficult, and an idea exciting enough to steal time from golf, we already have four reasons to talk.</p>
       <a class="pill" href="mailto:fredrik@signalprofessor.com">Start a conversation <span aria-hidden="true">↗</span></a>
+      <p class="fallback">Golf remains the fallback option.</p>
     </section>
   </main>
 
@@ -401,7 +381,7 @@ Having achieved most of the conventional things I once aimed for, I am in the fo
     <div class="shell footer-inner">
       <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">∿</span>SignalProfessor</a>
       <span>© 2026 SignalProfessor. Find the structure. Make it useful.</span>
-      <div class="footer-links"><a href="#lessons">Lessons</a><a href="#approach">Approach</a></div>
+      <div class="footer-links"><a href="#field">In the wild</a><a href="#companies">Companies</a><a href="#professor">Professor</a></div>
     </div>
   </footer>
 </body>
