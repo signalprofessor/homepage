@@ -4,251 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07110e">
-  <meta name="description" content="Fredrik Gustafsson explores meaningful structure in uncertain data—from signal processing and sensor fusion to wildlife, companies and the next difficult problem.">
+  <meta name="description" content="Fredrik Gustafsson looks for meaningful structure in noisy reality—from signal processing and sensor fusion to wildlife, companies and the next difficult problem.">
   <title>SignalProfessor — Fredrik Gustafsson</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%2307110e'/%3E%3Cpath d='M8 33h10l5-16 9 31 8-27 5 12h11' fill='none' stroke='%237cf7c2' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <style>
-    :root {
-      color-scheme: dark;
-      --ink: #07110e;
-      --panel: #0c1a16;
-      --panel-2: #11241e;
-      --text: #f3f7f5;
-      --muted: #9bad9f;
-      --mint: #7cf7c2;
-      --mint-dim: #1f6b50;
-      --amber: #ffc76b;
-      --line: rgba(202, 240, 222, .14);
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: "Manrope", sans-serif;
-      --mono: "DM Mono", monospace;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 80% 4%, rgba(30, 107, 79, .2), transparent 26rem),
-        var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .shell { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
-    .nav {
-      height: 80px; display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid var(--line);
-    }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 800; letter-spacing: -.04em; font-size: 1.1rem; }
-    .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 9px; background: rgba(124,247,194,.07); }
-    .brand-mark svg { width: 25px; }
-    .nav-links { display: flex; align-items: center; gap: 30px; }
-    .nav-links a { text-decoration: none; font-size: .9rem; color: var(--muted); transition: color .2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav .pill { color: var(--ink); }
-    .pill {
-      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-      min-height: 46px; padding: 0 20px; border-radius: 999px; border: 1px solid var(--mint);
-      background: var(--mint); color: var(--ink); text-decoration: none; font-weight: 800; font-size: .9rem;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .pill:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(124,247,194,.16); }
-    .pill.outline { background: transparent; color: var(--text); border-color: var(--line); }
-    .hero {
-      min-height: 690px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px;
-      align-items: center; padding: 72px 0 88px;
-    }
-    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--mint); font-family: var(--mono); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--mint); }
-    h1 { margin: 23px 0 26px; max-width: 720px; font-family: var(--serif); font-size: clamp(3.7rem, 6.5vw, 6.6rem); font-weight: 400; line-height: .9; letter-spacing: -.055em; }
-    h1 em { color: var(--mint); font-style: italic; }
-    .lead { max-width: 600px; margin: 0 0 34px; color: #b7c7be; font-size: 1.12rem; line-height: 1.75; }
-    .hero-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-    .trust { display: flex; align-items: center; gap: 11px; margin-top: 30px; color: var(--muted); font-size: .8rem; }
-    .avatar-stack { display: flex; }
-    .avatar { width: 28px; height: 28px; display: grid; place-items: center; margin-right: -8px; border: 2px solid var(--ink); border-radius: 50%; background: #1f4b3c; color: var(--mint); font: 500 .64rem var(--mono); }
-    .scope { position: relative; aspect-ratio: 1/1.08; max-width: 500px; margin-left: auto; border: 1px solid var(--line); border-radius: 48% 48% 8px 8px; background: rgba(8, 25, 19, .85); box-shadow: 0 30px 80px rgba(0,0,0,.35); overflow: hidden; }
-    .scope img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.88) contrast(1.04); }
-    .scope-stat { position: absolute; left: 8%; bottom: 21%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 7px; background: rgba(7,17,14,.82); font: .68rem var(--mono); color: var(--muted); backdrop-filter: blur(8px); }
-    .scope-stat b { color: var(--amber); font-weight: 500; }
-    section { padding: 112px 0; }
-    .kicker { margin: 0 0 16px; color: var(--mint); font: .73rem var(--mono); text-transform: uppercase; letter-spacing: .11em; }
-    h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.7rem, 4vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: -.04em; }
-    .heart { background:#0a1713; }
-    .heart-grid { display:grid; grid-template-columns:.72fr 1.28fr; gap:72px; align-items:center; }
-    .heart-copy h2 { margin:14px 0 25px; }
-    .heart-copy p { color:var(--muted); line-height:1.7; }
-    .heart-copy p:last-child { color:var(--mint); font-family:var(--mono); font-size:.82rem; }
-    .ecg { margin:0; padding:14px; background:#f7faf8; border:1px solid var(--line); }
-    .ecg img { display:block; width:100%; height:auto; }
-    .ecg figcaption { color:#526159; font:.68rem var(--mono); padding:10px 4px 0; }
-    .prose { max-width: 760px; }
-    .prose p { color:var(--muted); font-size:1rem; line-height:1.76; margin:0 0 22px; }
-    .prose strong { color:var(--text); }
-    .s4-story { background:#0c1a16; }
-    .s4-layout { display:grid; grid-template-columns:.7fr 1.3fr; gap:90px; }
-    .s4-list { display:grid; gap:0; border-top:1px solid var(--line); }
-    .s4-item { display:grid; grid-template-columns:180px 1fr; gap:24px; padding:25px 0; border-bottom:1px solid var(--line); }
-    .s4-item strong { color:var(--mint); font-family:var(--serif); font-size:1.35rem; font-weight:400; }
-    .s4-item p { margin:0; color:var(--muted); line-height:1.65; }
-    details.code { margin-top:35px; border:1px solid var(--line); background:#07110e; }
-    details.code summary { cursor:pointer; padding:15px 18px; color:var(--mint); font:.72rem var(--mono); letter-spacing:.08em; list-style:none; }
-    details.code summary::-webkit-details-marker { display:none; }
-    pre { margin:0; padding:25px; overflow:auto; border-top:1px solid var(--line); color:#d9eee3; font:500 .82rem/1.7 var(--mono); }
-    .field-story { background:var(--panel); }
-    .field-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
-    .equipment { display:block; margin:28px 0; padding-top:18px; border-top:1px solid var(--line); color:var(--mint); font:.76rem/1.8 var(--mono); }
-    .data-sheet { background:#0a1713; }
-    .sheet-head { display:flex; justify-content:space-between; gap:30px; align-items:end; margin-bottom:45px; }
-    .academic { background:#10231c; }
-    .identity-line { padding:21px 0; border-block:1px solid var(--line); background:#0a1712; color:#c6d7ca; font:500 .78rem/1.6 var(--mono); letter-spacing:.025em; }
-    .identity-line span { color:var(--mint); margin:0 9px; }
-    .s4-item small { display:block; margin-top:5px; color:#9db8a8; font:500 .7rem/1.5 var(--mono); letter-spacing:0; }
-    .field-story .field-layout { align-items:start; }
-    .field-story h2 { max-width:400px; }
-    .companies { background:#e9f0eb; color:#0a1712; }
-    .companies .kicker { color:#286d4c; }
-    .companies-intro { display:grid; grid-template-columns:.75fr 1.25fr; gap:30px 90px; padding-bottom:72px; }
-    .companies-intro .kicker { grid-column:1/-1; margin:0; }
-    .companies-intro h2 { max-width:470px; }
-    .companies-intro .prose p { color:#43544a; }
-    .company-pattern,.company-aside { grid-column:2; margin:0; color:#526158; line-height:1.6; }
-    .company-pattern { font:500 .75rem/1.8 var(--mono); color:#276747; }
-    .timeline { border-top:1px solid #aebbb1; }
-    .timeline-item { display:grid; grid-template-columns:180px 1fr; gap:35px; border-bottom:1px solid #aebbb1; padding:55px 0 60px; }
-    .timeline-date { color:#2d7654; font:500 1.05rem var(--mono); padding-top:8px; }
-    .timeline-body { max-width:750px; }
-    .timeline-body h3 { margin:0 0 18px; font:400 clamp(2.3rem,4vw,4rem)/1 var(--serif); letter-spacing:-.04em; }
-    .timeline-body p { margin:0 0 15px; color:#43544a; font-size:1rem; line-height:1.72; }
-    .timeline-body p.personal { color:#0a1712; font:400 1.65rem/1.25 var(--serif); }
-    .timeline-body p.question { color:#0a1712; font-weight:700; }
-    .timeline-body p.company-punch { color:#286d4c; font-family:var(--serif); font-size:1.35rem; }
-    .timeline-body p.caveat { font-style:italic; font-size:.88rem; }
-    .timeline-body strong { color:#0a1712; }
-    .paper-link { display:block; margin-top:25px; color:#195a3d; text-decoration:none; font:700 .84rem var(--sans); }
-    .paper-link span { display:block; margin-top:6px; color:#576a5e; font:400 .75rem/1.5 var(--mono); }
-    .paper-link:hover,.academic-copy a:hover { text-decoration:underline; }
-    .stat-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); border-top:1px solid var(--line); border-left:1px solid var(--line); }
-    .stat { min-height:150px; display:flex; flex-direction:column; justify-content:space-between; gap:18px; padding:23px 25px; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
-    .stat strong { color:var(--mint); font:400 clamp(1.8rem,3vw,2.8rem)/1 var(--serif); letter-spacing:-.03em; overflow-wrap:anywhere; }
-    .stat strong.long { font-size:clamp(1.25rem,2vw,1.9rem); line-height:1.2; }
-    .stat span { color:#a9bbb0; font:400 .79rem/1.5 var(--mono); }
-    .stats-preface { margin:0 0 35px; color:#a9bbb0; font:400 1.5rem/1.35 var(--serif); }
-    .heart { border-top:1px solid var(--line); }
-    .heart .heart-grid { grid-template-columns:.75fr 1.25fr; }
-    .heart .heart-copy h2 { max-width:400px; }
-    .ecg figcaption em { display:block; margin-top:7px; }
-    .academic-copy { max-width:780px; margin-top:30px; }
-    .academic-copy p { color:#c7d5cc; font-size:1.03rem; line-height:1.75; }
-    .academic-copy a { color:var(--mint); text-decoration:none; font-weight:700; }
-    .academic-copy > a { display:inline-block; margin-top:15px; }
-    .academic-copy span { display:block; margin-top:20px; font-size:.78rem; }
-    .fallback { position:relative; color:var(--muted); font:italic 1.04rem var(--serif); margin:22px 0 0; }
-    .final { text-align: center; padding: 140px 0; position: relative; overflow: hidden; }
-    .final::before { content: ""; position: absolute; width: 650px; height: 650px; left: 50%; top: 50%; transform: translate(-50%,-50%); background: radial-gradient(circle, rgba(124,247,194,.12), transparent 64%); pointer-events: none; }
-    .final h2 { position: relative; max-width: 780px; margin: 0 auto 34px; font-size: clamp(3.2rem, 6vw, 6rem); }
-    .final .pill { position: relative; }
-    footer { border-top: 1px solid var(--line); }
-    .footer-inner { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 30px; color: var(--muted); font-size: .78rem; }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { text-decoration: none; }
-    @media (max-width: 880px) {
-      .nav-links a:not(.pill) { display: none; }
-      .hero { grid-template-columns: 1fr; min-height: auto; gap: 60px; padding-top: 64px; }
-      .hero-copy { text-align: center; }
-      .eyebrow, .hero-actions, .trust { justify-content: center; }
-      .lead { margin-inline: auto; }
-      .scope { margin-inline: auto; width: min(88vw, 480px); }
-      .heart-grid, .s4-layout, .field-layout, .companies-intro { grid-template-columns: 1fr; }
-      .companies-intro .kicker,.company-pattern,.company-aside { grid-column:1; }
-      .heart .heart-grid { grid-template-columns:1fr; }
-      .stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    }
-    @media (max-width: 560px) {
-      .shell { width: min(100% - 26px, 1180px); }
-      .nav { height: 70px; }
-      .brand { font-size: 1rem; }
-      .nav .pill { min-height: 39px; padding-inline: 14px; font-size: .78rem; }
-      h1 { font-size: clamp(3.25rem, 16vw, 4.5rem); }
-      section { padding: 84px 0; }
-      .hero { padding: 54px 0 72px; }
-      .s4-item { grid-template-columns:1fr; gap:8px; }
-      .sheet-head { align-items:start; flex-direction:column; }
-      .identity-line { font-size:.71rem; }
-      .identity-line span { margin:0 4px; }
-      .timeline-item { grid-template-columns:1fr; gap:13px; padding:42px 0 48px; }
-      .timeline-date { padding:0; }
-      .stat-grid { grid-template-columns:1fr; }
-      .stat { min-height:126px; }
-      .footer-inner { padding: 28px 0; align-items: flex-start; flex-direction: column; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
-    }
+    :root{color-scheme:dark;--ink:#07110e;--panel:#0c1a16;--panel2:#10231c;--text:#f3f7f5;--muted:#a9bbb0;--mint:#7cf7c2;--line:rgba(202,240,222,.14);--serif:Georgia,"Times New Roman",serif;--sans:"Manrope",sans-serif;--mono:"DM Mono",monospace}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(circle at 80% 4%,rgba(30,107,79,.2),transparent 26rem),var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit}.shell{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+    .nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:28px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:-.04em}.brand-mark{width:35px;height:35px;display:grid;place-items:center;border:1px solid var(--line);border-radius:9px;background:rgba(124,247,194,.07);color:var(--mint)}.nav-links{display:flex;align-items:center;gap:22px}.nav-links a{text-decoration:none;color:var(--muted);font-size:.78rem}.nav-links a:hover,.story a:hover{color:var(--mint)}
+    .hero{min-height:690px;display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:center;padding:72px 0 88px}.eyebrow{color:var(--mint);font:.75rem var(--mono);letter-spacing:.1em;text-transform:uppercase}.hero h1{margin:23px 0 26px;max-width:720px;font:400 clamp(3.7rem,6.5vw,6.6rem)/.9 var(--serif);letter-spacing:-.055em}.hero-copy{max-width:660px}.hero-copy p{color:#b7c7be;font-size:1.03rem;line-height:1.72;margin:0 0 18px}.scope{position:relative;aspect-ratio:1/1.08;max-width:500px;margin-left:auto;border:1px solid var(--line);border-radius:48% 48% 8px 8px;background:rgba(8,25,19,.85);box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden}.scope img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.04)}.scope-stat{position:absolute;left:8%;bottom:21%;padding:10px 12px;border:1px solid var(--line);border-radius:7px;background:rgba(7,17,14,.82);font:.68rem var(--mono);color:var(--muted)}
+    .identity-line{padding:21px 0;border-block:1px solid var(--line);background:#0a1712;color:#c6d7ca;font:500 .78rem/1.6 var(--mono);letter-spacing:.025em}.identity-line span{color:var(--mint);margin:0 9px}
+    section.chapter{padding:112px 0}.chapter:nth-of-type(even){background:var(--panel)}.story{max-width:780px}.story>h2:first-child{margin:0 0 34px;font:400 clamp(2.8rem,5vw,4.7rem)/1 var(--serif);letter-spacing:-.045em}.story h3{margin:80px 0 25px;padding-top:36px;border-top:1px solid var(--line);font:400 clamp(2rem,3vw,3rem)/1.08 var(--serif);letter-spacing:-.03em}.story h4{margin:24px 0 18px;color:var(--mint);font:400 1.5rem/1.25 var(--serif)}.story p{margin:0 0 20px;color:var(--muted);font-size:1.02rem;line-height:1.78}.story p strong{color:var(--text)}.story blockquote{margin:30px 0;padding:5px 0 5px 25px;border-left:2px solid var(--mint);color:var(--text);font:400 1.4rem/1.45 var(--serif)}.story a{color:var(--mint);font-weight:700;text-decoration:none}.story code{padding:2px 6px;border:1px solid var(--line);background:var(--ink);font:.88em var(--mono)}
+    .academic-actions{display:flex;flex-wrap:wrap;gap:24px;margin-top:62px;padding-top:28px;border-top:1px solid var(--line);font-weight:700}.academic-actions span{color:var(--muted)}
+    .companies{background:#e9f0eb!important;color:#0a1712}.companies .story{max-width:850px}.companies .story p{color:#43544a}.companies .story>h2{color:#0a1712}.companies .story h3{margin-top:60px;border-color:#aebbb1;color:#0a1712}.companies .story h4{color:#286d4c}.companies .story blockquote{color:#0a1712;border-color:#286d4c}.companies .story strong{color:#0a1712}.companies .story a{color:#195a3d}
+    .wild-sequence{color:var(--mint)!important;font-family:var(--mono);font-size:.88rem!important}.out{background:#0a1713!important}.ticker-wrap{margin:65px 0 95px;border-block:1px solid var(--line);overflow:hidden}.ticker-label{padding:18px 0 0;color:var(--mint);font:500 .72rem var(--mono);text-transform:uppercase;letter-spacing:.12em}.ticker{display:flex;width:max-content;animation:passing 55s linear infinite}.ticker:hover,.ticker:focus-within,.ticker-wrap:focus .ticker{animation-play-state:paused}.ticker p{white-space:nowrap;margin:0;padding:22px 3rem 24px 0;color:#dce9e1;font:500 .82rem var(--mono)}@keyframes passing{to{transform:translateX(-50%)}}
+    .heart{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:center;margin:0 0 110px}.heart h2{margin:0;font:400 clamp(2.7rem,4vw,4.2rem)/1 var(--serif);letter-spacing:-.04em}.ecg{margin:0;padding:14px;background:#f7faf8;border:1px solid var(--line)}.ecg img{display:block;width:100%;height:auto}.ecg figcaption{padding:10px 4px 0;color:#526159;font:.68rem var(--mono)}
+    .s4 .story{max-width:900px}.s4 .story h3{color:var(--mint)}details.code{max-width:900px;margin-top:45px;border:1px solid var(--line);background:#07110e}details.code summary{cursor:pointer;padding:15px 18px;color:var(--mint);font:.72rem var(--mono);letter-spacing:.08em;list-style:none}details.code summary::-webkit-details-marker{display:none}pre{margin:0;padding:25px;overflow:auto;border-top:1px solid var(--line);color:#d9eee3;font:500 .82rem/1.7 var(--mono)}
+    .final{text-align:center}.final .story{margin:auto}.final .story>h2:first-child{font-size:clamp(3.2rem,6vw,6rem)}.pill{display:inline-flex;align-items:center;min-height:46px;padding:0 20px;border-radius:999px;border:1px solid var(--mint);background:var(--mint);color:var(--ink);text-decoration:none;font-weight:800}.fallback{margin-top:22px;color:var(--muted);font:italic 1.04rem var(--serif)}footer{border-top:1px solid var(--line)}.footer-inner{min-height:105px;display:flex;align-items:center;justify-content:space-between;gap:30px;color:var(--muted);font-size:.78rem}.footer-links{display:flex;gap:20px}.footer-links a{text-decoration:none}
+    @media(max-width:920px){.nav-links a:nth-child(-n+5){display:none}.hero{grid-template-columns:1fr;min-height:auto;gap:55px}.scope{margin-inline:auto}.heart{grid-template-columns:1fr}.story{max-width:none}}
+    @media(max-width:560px){.shell{width:min(100% - 26px,1120px)}.nav{min-height:70px}.nav-links a{font-size:.72rem}.hero{padding:54px 0 72px}.hero h1{font-size:clamp(3.25rem,16vw,4.5rem)}section.chapter{padding:82px 0}.identity-line{font-size:.7rem}.identity-line span{margin:0 3px}.story h3{margin-top:58px}.ticker p{padding-right:2rem}.footer-inner{padding:28px 0;align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticker{width:auto;animation:none}.ticker p{white-space:normal}.ticker p[aria-hidden="true"]{display:none}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}}
   </style>
 </head>
 <body>
-  <header class="shell">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#" aria-label="SignalProfessor home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 32 22"><path d="M1 12h5l3-9 5 17 5-15 4 7h8" fill="none" stroke="#7cf7c2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        SignalProfessor
-      </a>
-      <div class="nav-links">
-        <a href="#approach">S4</a>
-        <a href="#companies">Companies</a>
-        <a href="#professor">Professor</a>
-        <a class="pill" href="#start">What's next? <span aria-hidden="true">↗</span></a>
-      </div>
-    </nav>
-  </header>
-
+  <header class="shell"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="#intro" aria-label="SignalProfessor home"><span class="brand-mark" aria-hidden="true">∿</span>SignalProfessor</a><div class="nav-links"><a href="#academic">Academic</a><a href="#equations">Equations escape</a><a href="#wild">Into the wild</a><a href="#out">Out of office</a><a href="#s4">S4</a><a href="https://liu.se/en/employee/fregu23">Professor</a></div></nav></header>
   <main>
-    <div class="shell">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <div class="eyebrow">Fredrik Gustafsson / Linköping</div>
-          <h1 id="hero-title">{{hero.title}}</h1>
-          <div class="lead"><p>{{hero.p1}}</p><p>{{hero.p2}}</p><p>{{hero.p3}}</p><p>{{hero.p4}}</p></div>
-          <div class="hero-actions">
-            <a class="pill" href="#approach">Follow the signal <span aria-hidden="true">↓</span></a>
-            <a class="pill outline" href="#field">In the wild</a>
-          </div>
-          <div class="trust">
-            <div class="avatar-stack" aria-hidden="true"><span class="avatar">∑</span><span class="avatar">ƒ</span><span class="avatar">Δ</span></div>
-            <span>Find the meaningful structure in messy reality.</span>
-          </div>
-        </div>
-        <figure class="scope"><img src="signalprofessor_acacia.png" alt="Fredrik Gustafsson beside an acacia tree"><figcaption class="scope-stat">FIELD NOTE <b>/ ACACIA</b><br>messy reality, sampled</figcaption></figure>
-      </section>
-    </div>
-
+    <div class="shell" id="intro"><section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><div class="eyebrow">Fredrik Gustafsson / Linköping</div><h1 id="hero-title">{{hero.title}}</h1>{{hero.copy}}</div><figure class="scope"><img src="signalprofessor_acacia.png" alt="Fredrik Gustafsson beside an acacia tree"><figcaption class="scope-stat">FIELD NOTE / ACACIA<br>messy reality, sampled</figcaption></figure></section></div>
     <div class="identity-line"><div class="shell">Professor <span>·</span> Researcher <span>·</span> Entrepreneur <span>·</span> Occasionally found in trees</div></div>
-
-    <section id="approach" class="s4-story">
-      <div class="shell s4-layout">
-        <div>
-          <p class="kicker">S4 · fyra ess i leken</p>
-          <h2>{{s4.title}}</h2>
-          <div class="prose" style="margin-top:28px"><p>{{s4.p1}}</p></div>
-        </div>
-        <div>
-          <div class="s4-list">
-            <div class="s4-item"><strong>Samhällsnytta <small>Societal benefit</small></strong><p>Does it matter? Something useful should happen if we succeed. There should be a reason beyond producing another paper.</p></div>
-            <div class="s4-item"><strong>Socialt <small>People</small></strong><p>Do I want to do it with these people? Research consumes too much of life to spend it with people you don't enjoy.</p></div>
-            <div class="s4-item"><strong>Svårt som fan <small>Difficult as hell</small></strong><p>Is it genuinely difficult? If somebody else can easily solve it, they should. I can play golf instead.</p></div>
-            <div class="s4-item"><strong>Spännande <small>Exciting</small></strong><p>Do I actually want to know the answer? This one has to make me curious enough to act.</p></div>
-          </div>
-          <p style="margin:25px 0;color:var(--text);font-family:var(--serif);font-size:1.45rem">The world. The people. The problem. Me.</p>
-          <details class="code"><summary>&gt;_ implementation details</summary><pre><code>if ~samhallsnytta
+    <section id="academic" class="chapter"><div class="shell"><div class="story">{{academic.html}}<div class="academic-actions"><span>Google Scholar →</span><a href="https://www.control.isy.liu.se/en/books/">Books →</a><a href="https://liu.se/en/employee/fregu23">Professor mode →</a></div></div></div></section>
+    <section id="equations" class="chapter companies"><div class="shell"><div class="story">{{equations-escape.html}}</div></div></section>
+    <section id="wild" class="chapter"><div class="shell"><div class="story wild-story">{{into-the-wild.html}}</div></div></section>
+    <section id="out" class="chapter out"><div class="shell"><div class="story">{{out-of-office.html}}</div><div class="ticker-label">Passing statistics</div><div class="ticker-wrap" tabindex="0" aria-label="Passing statistics: 4 children, 2 marriages, 0 planned, 8 marathons, 2 hours 55 marathon, 21.5 out of 24, approximately 2450, approximately 84 is fine, 1 renovated heart, espresso machines insufficiently centralized, at least 1 licentiate defence from a leopard cliff, at least 1 BLE scanner installed in an acacia tree, rhinos within working distance varies"><div class="ticker"><p>4 children · 2 marriages · 0 planned · 8 marathons · 2:55 marathon · 21.5/24 · ≈2450 · ≈84 is fine · 1 renovated heart · espresso machines: insufficiently centralized · ≥1 licentiate defence from a leopard cliff · BLE scanners installed in acacia trees: ≥1 · rhinos within working distance: varies&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</p><p aria-hidden="true">4 children · 2 marriages · 0 planned · 8 marathons · 2:55 marathon · 21.5/24 · ≈2450 · ≈84 is fine · 1 renovated heart · espresso machines: insufficiently centralized · ≥1 licentiate defence from a leopard cliff · BLE scanners installed in acacia trees: ≥1 · rhinos within working distance: varies&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</p></div></div><div class="heart"><h2>Here is my renovated heart.</h2><figure class="ecg"><img src="ecg-confidence.png" alt="Average ECG beat with a teal 95 percent confidence interval across 26 beats"><figcaption>Average ECG beat · 95% confidence interval · N = 26 beats</figcaption></figure></div><div class="story">{{why-signalprofessor.html}}</div></div></section>
+    <section id="s4" class="chapter s4"><div class="shell"><div class="story">{{s4.html}}</div><details class="code"><summary>&gt;_ implementation details</summary><pre><code>if ~samhallsnytta
     return
 elseif ~socialt
     return
@@ -258,119 +46,9 @@ elseif ~spannande
     drink_espresso
 else
     start_new_project
-end</code></pre></details>
-        </div>
-      </div>
-    </section>
-
-    <section id="field" class="field-story">
-      <div class="shell field-layout">
-        <div>
-          <p class="kicker">Ngulia · Tsavo</p>
-          <h2>{{field-notes.title}}</h2>
-        </div>
-        <div>
-          <div class="prose">
-            <p>{{field-notes.p1}}</p>
-            <span class="equipment">{{field-notes.p2}}</span>
-            <p>{{field-notes.p3}}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="companies" class="companies">
-      <div class="shell">
-        <div class="companies-intro">
-          <p class="kicker">Research, then reality</p>
-          <h2>{{companies-intro.title}}</h2>
-          <div class="prose"><p>{{companies-intro.p1}}</p><p>{{companies-intro.p2}}</p><p>{{companies-intro.p3}}</p><p>{{companies-intro.p4}}</p></div>
-          <p class="company-pattern">personal attraction → research question → company → concrete consequence → equations</p>
-          <p class="company-aside">A company is not a departure from research. It is one route by which an idea learns to move without its originator.</p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-item">
-            <div class="timeline-date">1998</div>
-            <div class="timeline-body"><h3>{{sigmoid.title}}</h3><p class="personal">{{sigmoid.p1}}</p><p>{{sigmoid.p2}}</p><p>{{sigmoid.p3}}</p><p>{{sigmoid.p4}}</p><p>{{sigmoid.p5}}</p><p class="caveat">{{sigmoid.p6}}</p></div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">2001</div>
-            <div class="timeline-body"><h3>{{nira.title}}</h3><p class="personal">{{nira.p1}}</p><p class="question">{{nira.p2}}</p><p>{{nira.p3}}</p><p>{{nira.p4}}</p><a class="paper-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0005109897000034">Show me the equations → <span>F. Gustafsson, “Slip-based tire-road friction estimation,” Automatica, 1997.</span></a></div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">2003</div>
-            <div class="timeline-body"><h3>{{softube.title}}</h3><p class="personal">{{softube.p1}}</p><p class="question">{{softube.p2}}</p><p>{{softube.p3}}</p><p>{{softube.p4}}</p><p class="company-punch">{{softube.p5}}</p><a class="paper-link" href="https://doi.org/10.1109/9.566661">Show me the equations → <span>B. Ninness and F. Gustafsson, “A unifying construction of orthonormal bases for system identification.”</span></a></div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">2010</div>
-            <div class="timeline-body"><h3>{{senion.title}}</h3><p class="personal">{{senion.p1}}</p><p class="question">{{senion.p2}}</p><p>{{senion.p3}}</p><p class="question">{{senion.p4}}</p><p class="company-punch">{{senion.p5}}</p><a class="paper-link" href="https://people.isy.liu.se/rt/fredrik/reports/05spmag.pdf">Show me the equations → <span>F. Gustafsson and F. Gunnarsson, “Mobile positioning using wireless networks.”</span></a></div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">2021</div>
-            <div class="timeline-body"><h3>{{qulinda.title}}</h3><p class="personal">{{qulinda.p1}}</p><p class="question">{{qulinda.p2}}</p><p>{{qulinda.p3}}</p><p class="question">{{qulinda.p4}}</p><a class="paper-link" href="https://qulinda.com/om-oss/">Show me the field notes → <span>How the work started in Kenya and continues in Sweden and Africa.</span></a></div>
-          </article>
-          <article class="timeline-item">
-            <div class="timeline-date">2025</div>
-            <div class="timeline-body"><h3>{{eastwing.title}}</h3><p class="personal">{{eastwing.p1}}</p><p class="question">{{eastwing.p2}}</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="data-sheet">
-      <div class="shell">
-        <div class="sheet-head"><div><p class="kicker">Vital statistics</p><h2>Some statistics are more useful than others.</h2></div></div>
-        <p class="stats-preface">A clock, scorecard or chessboard does not care about reputation.</p>
-        <div class="stat-grid" aria-label="Vital statistics">
-          <div class="stat"><strong>4</strong><span>Children</span></div><div class="stat"><strong>2</strong><span>Marriages</span></div><div class="stat"><strong>0</strong><span>Additional marriages planned</span></div>
-          <div class="stat"><strong>8</strong><span>Marathons completed</span></div><div class="stat"><strong>2:55</strong><span>Marathon PB</span></div><div class="stat"><strong>36:20</strong><span>10 km PB</span></div>
-          <div class="stat"><strong>21.5 / 24</strong><span>Best remembered chess season</span></div><div class="stat"><strong>≈2450</strong><span>Performance rating that season</span></div><div class="stat"><strong>≈84</strong><span>Golf round that makes me reasonably happy</span></div>
-          <div class="stat"><strong>1</strong><span>Open-heart surgeries</span></div><div class="stat"><strong>26</strong><span>Beats in ECG ensemble</span></div><div class="stat"><strong class="long">insufficiently centralized</strong><span>Espresso machines</span></div>
-          <div class="stat"><strong>≥1</strong><span>Espresso machines taken to Africa</span></div><div class="stat"><strong>≥1</strong><span>Licentiate defences attended from leopard cliffs</span></div><div class="stat"><strong>≥1</strong><span>BLE scanners installed in acacia trees</span></div>
-          <div class="stat"><strong>varies</strong><span>Rhinos within working distance</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="heart">
-      <div class="shell heart-grid">
-        <div class="heart-copy">
-          <h2>{{heart.title}}</h2>
-        </div>
-        <figure class="ecg">
-          <img src="ecg-confidence.png" alt="Average ECG beat with a teal 95 percent confidence interval across 26 beats">
-          <figcaption>Average ECG beat · 95% confidence interval · N = 26 beats <em>Self-estimation from noisy measurements.</em></figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section id="professor" class="academic">
-      <div class="shell">
-        <h2>{{academic.title}}</h2>
-        <div class="academic-copy">
-          <p>{{academic.p1}}</p>
-          <p>{{academic.p2}}</p>
-          <a href="https://liu.se/en/employee/fregu23">Enter Professor mode →</a>
-          <span><a href="https://www.control.isy.liu.se/en/books/">Books</a> · <a href="https://staff.gitlab-pages.liu.se/publications/fregu23/">Papers</a></span>
-        </div>
-      </div>
-    </section>
-
-    <section id="start" class="final shell">
-      <h2>{{next.title}}</h2>
-      <p class="lead" style="margin:24px auto 20px">{{next.p1}}</p>
-      <p class="lead" style="margin:0 auto 32px">{{next.p2}}</p>
-      <a class="pill" href="mailto:fredrik@signalprofessor.com">Start a conversation <span aria-hidden="true">↗</span></a>
-      <p class="fallback">{{next.p3}}</p>
-    </section>
+end</code></pre></details></div></section>
+    <section id="start" class="chapter final"><div class="shell"><div class="story">{{next.html}}</div><a class="pill" href="mailto:fredrik@signalprofessor.com">Start a conversation →</a><p class="fallback"><em>Golf remains the fallback option.</em></p></div></section>
   </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">∿</span>SignalProfessor</a>
-      <span>© 2026 SignalProfessor. Find the structure. Make it useful.</span>
-      <div class="footer-links"><a href="#field">In the wild</a><a href="#companies">Companies</a><a href="#professor">Professor</a></div>
-    </div>
-  </footer>
+  <footer><div class="shell footer-inner"><a class="brand" href="#intro"><span class="brand-mark" aria-hidden="true">∿</span>SignalProfessor</a><span>© 2026 SignalProfessor</span><div class="footer-links"><a href="#academic">Academic</a><a href="#wild">Into the wild</a><a href="#s4">S4</a></div></div></footer>
 </body>
 </html>

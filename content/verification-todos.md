@@ -1,9 +1,11 @@
-# Facts to verify before adding to the live homepage
+# Verification notes
 
-TODO: verify the current scale of approximately 140 million cars with NIRA iTPMS technology.
+Confirmed: approximately 140 million cars with NIRA iTPMS technology, provided directly by the NIRA CEO to Fredrik Gustafsson in 2026.
 
-TODO: verify approximately 300 million road-friction measurements delivered to Trafikverket during the previous winter, including the relevant winter dates.
+Confirmed: approximately 300 million road-friction measurements in the current Trafikverket programme, supported by public programme reporting.
 
-TODO: verify the 300-plus Senion indoor-positioning installations figure before publishing it.
+TODO: add the correct Google Scholar profile URL.
 
-TODO: confirm company founding dates and the description of Fredrik's role in each company against company records where possible.
+TODO: add the appropriate verified research/publications destination for the change-detection story.
+
+TODO: add the verified URL for the 2002 particle-filter paper.
