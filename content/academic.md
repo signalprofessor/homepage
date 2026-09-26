@@ -8,6 +8,8 @@ I'm more interested in the ideas that refused to go away.
 
 My PhD thesis in 1992 was about **change detection**: how to notice quickly that the system producing your measurements isn't the system you thought it was.
 
+![The purple cover of Fredrik Gustafsson’s 1992 PhD thesis, Estimation of discrete parameters in linear systems.](imagethesis.png "It started here, 1992. || Estimation of discrete parameters in linear systems.")
+
 The thesis eventually became *Adaptive Filtering and Change Detection* (Wiley, 2000)—essentially my PhD thesis 2.0.
 
 Change detection has kept coming back in different disguises. Twenty years later it reappeared in work with Henrik Ohlsson, Lennart Ljung and Stephen Boyd. That paper received the 2012 *Automatica* Best Paper Award.
