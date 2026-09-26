@@ -14,9 +14,7 @@ My first company, and still my playground for new projects.
 
 It also refers to the sigmoid function in neural networks.
 
-And if someone asks rudely enough, I explain that *sigmoid* is Latin for **asshole**.
-
-> **Close enough.**
+And if someone asks rudely enough, I explain that *sigmoid* is Latin for **asshole**. Close enough.
 
 ## 2001 — NIRA Dynamics
 
@@ -66,7 +64,7 @@ Senion was acquired by Verizon in 2021.
 
 So apparently I helped create a company that made it easier to find my way out of shopping malls.
 
-[**Show me the equations →**](https://www.researchgate.net/profile/Fredrik-Gunnarsson/publication/3321638_Mobile_positioning_using_wireless_networks_possibilities_and_fundamental_limitations_based_on_available_wireless_network_measurements/links/02e7e5226efc7b5510000000/Mobile-positioning-using-wireless-networks-possibilities-and-fundamental-limitations-based-on-available-wireless-network-measurements.pdf)
+[**Show me the equations →**](https://www.researchgate.net/profile/Jouni-Rantakokko/publication/224230428_Accurate_and_reliable_soldier_and_first_responder_indoor_positioning_multisensor_systems_and_cooperative_localization/links/554723fb0cf234bdb21db665/Accurate-and-reliable-soldier-and-first-responder-indoor-positioning-multisensor-systems-and-cooperative-localization.pdf)
 
 ## 2021 — Qulinda
 

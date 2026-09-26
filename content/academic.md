@@ -4,8 +4,6 @@ Signalprofessor has many publications, many citations and a reassuringly large h
 
 I'm more interested in the ideas that refused to go away.
 
-TODO: correct Google Scholar profile URL.
-
 ## Things that change
 
 My PhD thesis in 1992 was about **change detection**: how to notice quickly that the system producing your measurements isn't the system you thought it was.
@@ -18,9 +16,7 @@ More recently it turned up again in monitoring failures in implanted HeartMate p
 
 Apparently some research problems are difficult to get rid of.
 
-**Show me the equations →**
-
-TODO: link to appropriate research/publications destination. Do not invent metadata.
+[**Show me the equations →**](https://www.researchgate.net/profile/Henrik-Ohlsson-2/publication/235736328_Weight_Determination_by_Manifold_Regularization/links/0a85e530cb62eb98c5000000/Weight-Determination-by-Manifold-Regularization.pdf#page=167)
 
 ## Cars, tyres and roads
 
@@ -52,9 +48,7 @@ In 2002 we tried to summarize what we had learned in *Particle Filters for Posit
 
 Twenty-four years later, IEEE decided the paper had survived rather well: it received the IEEE Signal Processing Society Sustained Impact Paper Award.
 
-**Show me the equations →**
-
-TODO: link to verified 2002 paper; do not invent URL.
+[**Show me the equations →**](https://www.rt.isy.liu.se/research/reports/2001/2333.pdf)
 
 ## Where am I?
 
@@ -87,6 +81,8 @@ Together with researchers in control, statistics, epidemiology and healthcare, w
 One result ended up in ***Nature***.
 
 > **The journal, not the place where you find rhinos.**
+
+[**Show me the equations →**](https://www.nature.com/articles/s41586-020-3025-y)
 
 ### Sometimes people ask us to locate things.
 
