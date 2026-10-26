@@ -2,7 +2,9 @@
 
 Signalprofessor has many publications, many citations and a reassuringly large h-index. Google Scholar keeps count.
 
-I'm more interested in the ideas that refused to go away.
+I'm more interested in the research ideas that survived long enough to become useful.
+
+Four of them have followed me for much of my career: detecting change, extracting information from moving vehicles, representing uncertainty, and figuring out where things are.
 
 ## Things that change
 
@@ -10,21 +12,27 @@ My PhD thesis in 1992 was about **change detection**: how to notice quickly that
 
 ![The purple cover of Fredrik Gustafsson’s 1992 PhD thesis, Estimation of discrete parameters in linear systems.](imagethesis.png "It started here, 1992. || Estimation of discrete parameters in linear systems.")
 
+The technical thread connects system identification, filtering, statistical inference, and discrete decisions: estimate what can be estimated, then decide whether the system producing the measurements has changed.
+
 The thesis eventually became *Adaptive Filtering and Change Detection* (Wiley, 2000)—essentially my PhD thesis 2.0.
 
-Change detection has kept coming back in different disguises. Twenty years later it reappeared in work with Henrik Ohlsson, Lennart Ljung and Stephen Boyd. That paper received the 2012 *Automatica* Best Paper Award.
+Change detection has kept coming back in different disguises. Twenty years later, work with Henrik Ohlsson, Lennart Ljung and Stephen Boyd revisited the problem through sparse estimation. That paper received the 2012 *Automatica* Best Paper Award.
 
 More recently it turned up again in monitoring failures in implanted HeartMate pumps.
 
 Apparently some research problems are difficult to get rid of.
 
-[**Show me the equations →**](https://www.researchgate.net/profile/Henrik-Ohlsson-2/publication/235736328_Weight_Determination_by_Manifold_Regularization/links/0a85e530cb62eb98c5000000/Weight-Determination-by-Manifold-Regularization.pdf#page=167)
+Selected work → [Thesis](https://staff.gitlab-pages.liu.se/publications/fregu23/) · [Book](https://onlinelibrary.wiley.com/doi/book/10.1002/0470841613) · [*Automatica* Best Paper](https://doi.org/10.1016/j.automatica.2011.08.063) · [HeartMate monitoring](https://doi.org/10.1177/0391398819857443)
 
 ## Cars, tyres and roads
 
 My first serious application area was cars.
 
 **Can a car infer what is happening between tyre and road from sensors it already has?**
+
+Tyre–road friction is difficult to measure directly. It changes with the road, weather, tyres and vehicle dynamics, and becomes most important precisely when safety margins are small.
+
+The work became an early exercise in **virtual sensing**: use models and signals already available in the vehicle to estimate a quantity that would otherwise require another physical sensor.
 
 That question led to MSc projects, patents and research on tyre–road friction estimation, including an *Automatica* paper in 1997.
 
@@ -48,9 +56,11 @@ Niclas Bergman was working on terrain-aided navigation for Gripen and promptly g
 
 In 2002 we tried to summarize what we had learned in *Particle Filters for Positioning, Navigation, and Tracking*.
 
+Particle filters then spread through the research group into positioning, tracking, navigation and sensor fusion across generations of PhD students.
+
 Twenty-four years later, IEEE decided the paper had survived rather well: it received the IEEE Signal Processing Society Sustained Impact Paper Award.
 
-[**Show me the equations →**](https://www.rt.isy.liu.se/research/reports/2001/2333.pdf)
+Selected work → [2002 paper](https://www.rt.isy.liu.se/research/reports/2001/2333.pdf) · [Particle-filter theory and practice](https://doi.org/10.1109/MAES.2010.5546308)
 
 ## Where am I?
 
@@ -58,9 +68,11 @@ Around the same time, Fredrik Gunnarsson and I started asking a more general que
 
 **What can radio signals actually tell us about position—and how accurately can we possibly know?**
 
-Our 2005 paper put signal strength, timing, angles, geometry, maps, motion models and other sensors into one statistical framework.
+Our 2005 paper put heterogeneous radio measurements, geometry, maps, motion models and other sensors into one statistical estimation framework.
 
-The measurements changed. Mobile networks went from GSM through 3G, 4G and 5G. Now 6G is beginning.
+A central part was not only estimating position, but understanding fundamental accuracy limits: how measurement quality and geometry constrain the performance any method can achieve.
+
+The measurements changed. Mobile networks went from GSM through 3G, 4G and 5G. Now 6G is beginning. Smartphones added inertial sensors and richer maps, but the same framework—measurements, geometry, motion, uncertainty and fusion—remains relevant.
 
 The underlying questions changed remarkably little.
 
@@ -72,7 +84,7 @@ And some of those equations eventually escaped indoors.
 
 ## And then there are the side quests
 
-Research careers look much tidier in retrospect than they actually are.
+The four threads above explain much of my research career. Fortunately, not all of it.
 
 ### And then there was a pandemic.
 

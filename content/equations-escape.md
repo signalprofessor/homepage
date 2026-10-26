@@ -1,8 +1,12 @@
 # Occasionally, the equations escape the university
 
-A company is not a departure from research. It is one route by which an idea learns to move without its originator.
+I like research that produces papers. I like it even more when the results acquire a life outside the university.
+
+A company is one way an idea can learn to move without its originator.
 
 Looking back, the companies aren't quite as random as they seem.
+
+![Three framed displays for NIRA Dynamics, Senion and Softube on Fredrik Gustafsson’s office wall.](imagestartupoffice.jpg "The first three startups. || NIRA Dynamics, Senion and Softube in my office.")
 
 ## 1998 — Sigmoid
 
@@ -24,11 +28,13 @@ Remember the tyre–road friction research?
 
 Some of those equations escaped.
 
-NIRA Dynamics grew from our vehicle research into technology that estimates things which are surprisingly difficult to measure directly.
+![Fredrik Gustafsson working with a computer inside a test vehicle in 1993.](imagevehicle1993.jpg "Vehicle research, 1993. || The project that preceded NIRA Dynamics.")
+
+NIRA Dynamics grew from vehicle models that used existing signals to estimate quantities otherwise requiring additional physical sensors.
 
 Today its indirect tyre-pressure monitoring technology is found in around **140 million cars**.
 
-The same philosophy has moved from understanding the car to understanding the road. Last winter, NIRA delivered around **300 million road-friction measurements** to Trafikverket.
+The same virtual-sensing philosophy has moved from understanding the car to understanding the road. Last winter, NIRA delivered around **300 million road-friction measurements** to Trafikverket.
 
 [**Show me the equations →**](https://www.sciencedirect.com/science/article/abs/pii/S0005109897000034)
 
@@ -38,7 +44,7 @@ The same philosophy has moved from understanding the car to understanding the ro
 
 Then the equations found a guitar amplifier.
 
-Research on system identification and nonlinear dynamic models met people who cared deeply about what amplifiers actually sounded like.
+System identification means building models of dynamic systems from measured inputs and outputs. Here, the systems were analogue audio equipment and the outputs had to sound right.
 
 Softube grew from that collision of engineering and music.
 
@@ -52,13 +58,11 @@ Today the brand is used by **countless** professional producers, GRAMMY-winning 
 
 ### I don't like shopping malls.
 
-Remember the radio-positioning research?
+The original problem was positioning firefighters and first responders inside buildings, where GPS is unavailable.
 
-Those equations escaped too.
+Senion combined smartphone radio measurements, inertial sensors, maps and Bayesian sensor fusion to estimate position indoors.
 
-Senion grew from research on radio measurements, maps, motion sensors and sensor fusion for positioning when GPS is unavailable.
-
-We started by worrying about firefighters and first responders inside buildings. The technology eventually found itself in large shopping centres around the world and later in smart offices.
+The technology eventually found itself in large shopping centres around the world and later in smart offices.
 
 Senion was acquired by Verizon in 2021.
 
@@ -72,11 +76,11 @@ So apparently I helped create a company that made it easier to find my way out o
 
 Eventually, the signals grew legs.
 
-Qulinda brings positioning, sensors, communications and AI to animals and nature—from livestock in Sweden to wildlife conservation in Africa.
+Qulinda brings positioning, sensors, communications and AI to livestock in Sweden and wildlife in Africa.
 
-The technology changes. The question is familiar:
+The questions are concrete:
 
-> **What is happening, where is it happening, and does someone need to know?**
+> **Where is the animal? What is it doing? Is something unusual happening? Does someone need to know?**
 
 [**Into the wild ↓**](#wild)
 

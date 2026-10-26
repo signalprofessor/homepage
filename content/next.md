@@ -2,4 +2,6 @@
 
 **I don't know what the next project will be. That's rather the point.**
 
-If it does something useful, involves good people, is difficult as hell and makes me genuinely curious, it has passed the first test.
+I am particularly interested in problems where statistical inference, sensing and real-world systems meet—and where solving the technical problem would actually make something better.
+
+If it has societal value, involves good people, is difficult as hell and makes me genuinely curious, it has passed the first test.
